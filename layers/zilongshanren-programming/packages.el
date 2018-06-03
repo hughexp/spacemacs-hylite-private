@@ -32,7 +32,7 @@
         lua-mode
         (cc-mode :location built-in)
         ;; flycheck-clojure
-        etags-select
+        ;; etags-select
         (python :location built-in)
         (emacs-lisp :location built-in)
         ;; clojure-mode
@@ -289,10 +289,10 @@
     (setq company-backends-js2-mode '((company-dabbrev-code :with company-keywords company-etags)
                                       company-files company-dabbrev))
 
-    ;; (zilongshanren|toggle-company-backends company-tern)
+    (zilongshanren|toggle-company-backends company-tern)
 
-    ;; (spacemacs/set-leader-keys-for-major-mode 'js2-mode
-    ;;   "tb" 'zilong/company-toggle-company-tern)
+    (spacemacs/set-leader-keys-for-major-mode 'js2-mode
+      "tb" 'zilong/company-toggle-company-tern)
 
     (add-hook 'js2-mode-hook 'my-js2-mode-hook)
 
@@ -346,10 +346,9 @@
         (spacemacs/declare-prefix-for-mode 'css-mode "mt" "toggle")
 
 
-        ;; (eval-after-load 'tern-mode
-        ;;   '(spacemacs|hide-lighter tern-mode))
-        ;; )
-      )
+        (eval-after-load 'tern-mode
+          '(spacemacs|hide-lighter tern-mode))
+        ))
 
     (evilified-state-evilify js2-error-buffer-mode js2-error-buffer-mode-map)
 
@@ -527,8 +526,8 @@
     (setq company-minimum-prefix-length 1
           company-idle-delay 0.08)
 
-    (when (configuration-layer/package-usedp 'company)
-      (spacemacs|add-company-backends :modes shell-script-mode makefile-bsdmake-mode sh-mode lua-mode nxml-mode conf-unix-mode json-mode graphviz-dot-mode js2-mode))
+    ;;(when (configuration-layer/package-usedp 'company)
+    ;;  (spacemacs|add-company-backends :modes shell-script-mode makefile-bsdmake-mode sh-mode lua-mode nxml-mode conf-unix-mode json-mode graphviz-dot-mode))
     ))
 (defun zilongshanren-programming/post-init-company-c-headers ()
   (progn
