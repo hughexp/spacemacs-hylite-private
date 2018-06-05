@@ -80,6 +80,8 @@
 
 (setq url-show-status nil)
 
+;;禁用点击鼠标左键弹出窗口
+(global-unset-key [C-down-mouse-1])
 
 
 ;;Don't ask me when close emacs with process is running
