@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst hylite-programming-packages
-  '()
+  '(
+    dotnet
+  )
   "The list of Lisp packages required by the hylite-programming layer.
 
 Each entry is either:
@@ -58,5 +60,7 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-
+(defun hylite-programming/init-dotnet ()
+  (add-hook 'csharp-mode-hook 'dotnet-mode)
+)
 ;;; packages.el ends here

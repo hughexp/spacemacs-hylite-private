@@ -42,6 +42,7 @@
     ;; beacon
     ;; evil-vimish-fold
   )
+  
   "The list of Lisp packages required by the hylite-ui layer.
 
 Each entry is either:
