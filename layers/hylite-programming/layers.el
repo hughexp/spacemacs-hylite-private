@@ -10,7 +10,5 @@
 ;;; License: GPLv3
 
 (configuration-layer/declare-layers '(
-                                      hylite-better-defaults
-									  hylite-programming
-									  hylite-ui
+                                      csharp
                                       ))
