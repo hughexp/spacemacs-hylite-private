@@ -40,7 +40,7 @@
 ;;(setq-default fill-column 80)
 ;;
 ;;;; prevent dired window press o to split into three column
-;;(setq-default split-width-threshold 200)
+(setq-default split-width-threshold 200)
 
 (setq recenter-positions '(top middle bottom))
 
@@ -99,19 +99,20 @@
 ;;  "Prevent annoying \"Active processes exist\" query when you quit Emacs."
 ;;  (cl-flet ((process-list ())) ad-do-it))
 ;;
-;;;;Don't ask me when kill process buffer
-;;(setq kill-buffer-query-functions
-;;      (remq 'process-kill-buffer-query-function
-;;            kill-buffer-query-functions))
+
+;;Don't ask me when kill process buffer
+(setq kill-buffer-query-functions
+      (remq 'process-kill-buffer-query-function
+            kill-buffer-query-functions))
+			
+;; cleanup recent files
+(defun hylite/cleanup-recentf ()
+  (progn
+    (and (fboundp 'recentf-cleanup)
+         (recentf-cleanup))))
 ;;
-;;;; cleanup recent files
-;;(defun hylite/cleanup-recentf ()
-;;  (progn
-;;    (and (fboundp 'recentf-cleanup)
-;;         (recentf-cleanup))))
-;;
-;;(add-hook 'kill-emacs-hook #'hylite/cleanup-recentf)
-;;
+(add-hook 'kill-emacs-hook #'hylite/cleanup-recentf)
+
 ;;;; change evil initial mode state
 ;;(menu-bar-mode t)
 ;;
@@ -167,7 +168,7 @@
 ;;(add-hook 'minibuffer-inactive-mode-hook
 ;;          #'(lambda() (set (make-local-variable 'semantic-mode) nil)
 ;;              (set (make-local-variable 'electric-pair-mode) nil)))
-;;
+
 ;;;; http://trey-jackson.blogspot.com/2010/04/emacs-tip-36-abort-minibuffer-when.html
 ;;(defun hylite/stop-using-minibuffer ()
 ;;  "kill the minibuffer"
@@ -175,9 +176,9 @@
 ;;    (abort-recursive-edit)))
 ;;
 ;;(add-hook 'mouse-leave-buffer-hook 'hylite/stop-using-minibuffer)
-;;
+
 ;;(setq tags-add-tables nil)
-;;
+
 ;;(electric-pair-mode t)
 ;;;; https://www.reddit.com/r/emacs/comments/4xhxfw/how_to_tune_the_behavior_of_eletricpairmode/
 ;;(setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
@@ -191,6 +192,6 @@
 ;;
 ;;(csetq ediff-diff-options "-w")
 ;;
-;;(setq backup-by-copying t
-;;      make-backup-files nil
-;;      create-lockfiles nil)
+(setq backup-by-copying t
+      make-backup-files nil
+      create-lockfiles nil)
