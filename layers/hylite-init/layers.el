@@ -1,3 +1,4 @@
+
 ;;; layers.el --- Spacemacs Layer layers File
 ;;
 ;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
@@ -13,4 +14,5 @@
                                       hylite-better-defaults
 									  hylite-programming
 									  hylite-ui
+                                      hylite-note
                                       ))
