@@ -11,4 +11,5 @@
 
 (configuration-layer/declare-layers '(
                                       csharp
+                                      go
                                       ))

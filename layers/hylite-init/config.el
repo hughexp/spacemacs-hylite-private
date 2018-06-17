@@ -32,3 +32,17 @@
 ;;;; Tangle configuration
 ;;(org-babel-load-file (expand-file-name "~/emax/emax.org" user-emacs-directory))
 ;;;;(garbage-collect))
+
+(defvar org-agenda-dir ""
+  "gtd org files location")
+
+(defvar deft-dir ""
+  "deft org files locaiton")
+
+(defvar blog-admin-dir ""
+  "blog-admin files location")
+
+(setq-default
+ org-agenda-dir "~/hylite_data/org-notes"
+ deft-dir "~/hylite_data/org-notes"
+ blog-admin-dir "~/hylite_date/blogs")

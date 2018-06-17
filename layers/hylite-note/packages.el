@@ -181,11 +181,11 @@ Each entry is either:
 
       (setq org-tags-match-list-sublevels nil)
 
-      (add-hook 'org-mode-hook '(lambda ()
-                                  ;; keybinding for editing source code blocks
-                                  ;; keybinding for inserting code blocks
-                                  (local-set-key (kbd "C-c i s")
-                                                 'hylite/org-insert-src-block)))
+      ;;(add-hook 'org-mode-hook '(lambda ()
+      ;;                            ;; keybinding for editing source code blocks
+      ;;                            ;; keybinding for inserting code blocks
+      ;;                            (local-set-key  "C-c i s")
+      ;;                                           'hylite/org-insert-src-block)))
       (require 'ox-publish)
       (add-to-list 'org-latex-classes '("ctexart" "\\documentclass[11pt]{ctexart}
                                         [NO-DEFAULT-PACKAGES]
@@ -295,11 +295,11 @@ unwanted space when exporting org-mode to html."
       (setq org-default-notes-file (expand-file-name "gtd.org" org-agenda-dir))
       (setq org-agenda-files (list org-agenda-dir))
 
-      (with-eval-after-load 'org-agenda
-        (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro)
-        (spacemacs/set-leader-keys-for-major-mode 'org-agenda-mode
-          "." 'spacemacs/org-agenda-transient-state/body)
-        )
+;;      (with-eval-after-load 'org-agenda
+;;        (define-key org-agenda-mode-map (kbd "P") 'org-pomodoro)
+;;        (spacemacs/set-leader-keys-for-major-mode 'org-agenda-mode
+;;          "." 'spacemacs/org-agenda-transient-state/body)
+;;        )
       ;; the %i would copy the selected text into the template
       ;;http://www.howardism.org/Technical/Emacs/journaling-org.html
       ;;add multi-file journal
@@ -395,10 +395,10 @@ unwanted space when exporting org-mode to html."
       (add-hook 'org-after-todo-statistics-hook 'hylite/org-summary-todo)
       ;; used by hylite/org-clock-sum-today-by-tags
 
-      (define-key org-mode-map (kbd "s-p") 'org-priority)
-      (spacemacs/set-leader-keys-for-major-mode 'org-mode
-        "tl" 'org-toggle-link-display)
-      (define-key evil-normal-state-map (kbd "C-c C-w") 'org-refile)
+      ;;(define-key org-mode-map (kbd "s-p") 'org-priority)
+      ;;(spacemacs/set-leader-keys-for-major-mode 'org-mode
+      ;;  "tl" 'org-toggle-link-display)
+      ;;(define-key evil-normal-state-map (kbd "C-c C-w") 'org-refile)
 
       ;; hack for org headline toc
       (defun org-html-headline (headline contents info)
@@ -481,15 +481,15 @@ holding contextual information."
 
       )))
 
-(defun hylite-note/init-org-mac-link ()
-  (use-package org-mac-link
-    :commands org-mac-grab-link
-    :init
-    (progn
-      (add-hook 'org-mode-hook
-                (lambda ()
-                  (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link))))
-    :defer t))
+;;(defun hylite-note/init-org-mac-link ()
+;;  (use-package org-mac-link
+;;    :commands org-mac-grab-link
+;;    :init
+;;    (progn
+;;      (add-hook 'org-mode-hook
+;;                (lambda ()
+;;                  (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link))))
+;;    :defer t))
 
 (defun hylite-note/post-init-ox-reveal ()
   (setq org-reveal-root "file:///Users/hylite/.emacs.d/reveal-js"))
