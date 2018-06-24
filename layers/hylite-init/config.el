@@ -18,7 +18,7 @@
 (setq exec-path (cons emax-mingw64 exec-path))
 (setenv "PATH" (concat emax-mingw64 ";" (getenv "PATH")))
 
-(setenv "PATH" (concat "C:\\msys64\\usr\\bin;C:\\msys64\\mingw64\\bin;" (getenv "PATH")))
+;; (setenv "PATH" (concat "C:\\app\\mingw-w64\\mingw64\\bin;" (getenv "PATH")))
 
 ;;(dolist (dir '("~/emax/" "~/emax/bin/" "~/emax/bin64/" "~/emax/mingw64/bin/" "~/emax/lisp/" "~/emax/elpa/"))
 ;;(add-to-list 'load-path dir))

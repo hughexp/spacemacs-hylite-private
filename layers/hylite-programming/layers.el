@@ -10,6 +10,8 @@
 ;;; License: GPLv3
 
 (configuration-layer/declare-layers '(
+                                      gtags
                                       csharp
                                       go
                                       ))
+

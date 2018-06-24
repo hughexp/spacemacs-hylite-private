@@ -32,7 +32,7 @@
 (defconst hylite-programming-packages
   '(
     dotnet
-    go
+    £»£»go
   )
   "The list of Lisp packages required by the hylite-programming layer.
 
@@ -64,6 +64,16 @@ Each entry is either:
 (defun hylite-programming/init-dotnet ()
   (add-hook 'csharp-mode-hook 'dotnet-mode)
   )
+  
+(defun hylite-programming/post-init-dotnet()
+      (add-hook 'csharp-mode-hook '(lambda ()
+                                      ;; keybinding for editing source code blocks
+                                      ;; keybinding for inserting code blocks
+                                      (local-set-key (kbd "<f12>") 'omnisharp-go-to-definition)
+									  (local-set-key (kbd "C--") 'pop-tag-mark)
+								    )
+	   )
+)
 
 (defun hylite-programming/init-go()
   )

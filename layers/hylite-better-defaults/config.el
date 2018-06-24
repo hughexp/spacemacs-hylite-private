@@ -9,6 +9,9 @@
 ;;
 ;;; License: GPLv3
 
+;; default-process-coding-system的car(第一个元素)表示解码进程输出(来自进程的文本)，cdr(后续元素)编码进程输入(发送给进程的文本)。
+;; (setq default-process-coding-system '(utf-8 . chinese-gbk))
+
 ;;禁用点击鼠标左键弹出窗口
 (global-unset-key [C-down-mouse-1])
 
