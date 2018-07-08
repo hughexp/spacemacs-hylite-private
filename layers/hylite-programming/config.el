@@ -1,4 +1,3 @@
-
 ;; 为gtags设置环境变量，使用ctags作为索引
 (setenv "GTAGSLABE" "ctags")
 

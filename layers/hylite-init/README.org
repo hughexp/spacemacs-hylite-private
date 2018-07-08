@@ -11,7 +11,8 @@
 
 * Description
 This layer does wonderful things:
-  - thing01
+  - The main function of this layer is to make it easy to load private layers.
+    you shoud keep it as simple as possible.
 
 * Install
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to

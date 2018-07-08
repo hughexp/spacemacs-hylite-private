@@ -1,4 +1,3 @@
-
 ;;;
 ;;;init config for emax path.
 ;;;
@@ -18,16 +17,11 @@
 (setq exec-path (cons emax-mingw64 exec-path))
 (setenv "PATH" (concat emax-mingw64 ";" (getenv "PATH")))
 
+;; add mingw-w64 path to emacs,you can add it if you need some command from mingw-w64
 ;; (setenv "PATH" (concat "C:\\app\\mingw-w64\\mingw64\\bin;" (getenv "PATH")))
 
 ;;(dolist (dir '("~/emax/" "~/emax/bin/" "~/emax/bin64/" "~/emax/mingw64/bin/" "~/emax/lisp/" "~/emax/elpa/"))
 ;;(add-to-list 'load-path dir))
-
-;;(set-language-environment 'utf-8)
-;;(setq locale-coding-system 'utf-8)
-;;(set-default-coding-systems 'utf-8)
-;;(set-terminal-coding-system 'utf-8)
-;;(prefer-coding-system 'utf-8)
 
 ;;;; Tangle configuration
 ;;(org-babel-load-file (expand-file-name "~/emax/emax.org" user-emacs-directory))
@@ -47,10 +41,10 @@
  deft-dir "~/hylite_data/org-notes"
  blog-admin-dir "~/hylite_date/blogs")
 
-
-;;;; 设置编辑环境
-;; 设置为中文简体语言环境
+;; setting editing environment for simple chinese
+;;(set-language-environment 'utf-8)
 (set-language-environment 'Chinese-GB)
+(prefer-coding-system 'utf-8)
 ;; 设置emacs 使用 utf-8
 (setq locale-coding-system 'utf-8)
 ;; 设置键盘输入时的字符编码
@@ -73,6 +67,7 @@
 (defun change-shell-mode-coding ()
   (progn
     (set-terminal-coding-system 'gbk)
+    ;;(set-terminal-coding-system 'utf-8)
     (set-keyboard-coding-system 'gbk)
     (set-selection-coding-system 'gbk)
     (set-buffer-file-coding-system 'gbk)
@@ -82,3 +77,7 @@
     (set-file-name-coding-system 'gbk)
     )
   )
+
+
+
+
