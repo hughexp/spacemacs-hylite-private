@@ -32,7 +32,6 @@
 (defconst hylite-programming-packages
   '(
     dotnet
-    £»£»go
   )
   "The list of Lisp packages required by the hylite-programming layer.
 
@@ -75,6 +74,6 @@ Each entry is either:
 	   )
 )
 
-(defun hylite-programming/init-go()
-  )
+;;(defun hylite-programming/init-go()
+;;  )
 ;;; packages.el ends here

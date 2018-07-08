@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst hylite-better-defaults-packages
-  '()
+  '(
+    hungry-delete
+    )
   "The list of Lisp packages required by the hylite-better-defaults layer.
 
 Each entry is either:
@@ -57,6 +59,10 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+		
+(defun hylite-better-defaults/post-init-hungry-delete ()
+    (add-hook 'prog-mode-hook 'global-hungry-delete-mode)  
+  )
 
 
 ;;; packages.el ends here
@@ -73,6 +79,7 @@ Each entry is either:
 ;; This file is not part of GNU Emacs.
 ;;
 ;;; License: GPLv3
+
 
 ;;(defconst zilongshanren-better-defaults-packages
 ;;  '(

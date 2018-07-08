@@ -42,8 +42,9 @@ This function should only modify configuration layer settings."
      helm
      ;;ivy
      (auto-completion :variables auto-completion-enable-sort-by-usage t
-                      auto-completion-enable-snippets-in-popup t
-                      :disabled-for org markdown)
+                      ;;auto-completion-private-snippets-directory "~/.spacemacs.d/snippets"
+                      :disabled-for org markdown
+                      auto-completion-enable-snippets-in-popup t)
      better-defaults
      colors
      yaml
@@ -197,7 +198,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-light
+   dotspacemacs-themes '(monokai
+                         solarized-light
                          solarized-dark)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -215,10 +217,10 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 16
-                               :weight normal
-                               :width normal)
+   dotspacemacs-default-font '("Consolas"
+                               :size 18
+                               :weight bold
+                               :width condensed)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
